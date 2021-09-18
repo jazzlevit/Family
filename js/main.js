@@ -1,5 +1,7 @@
+let peopleData = [];
+
 fetchData = () => {
-	fetch("raw.json?v=" + (new Date().getMilliseconds()))
+	fetch("./raw.json?v=" + (new Date().getMilliseconds()))
 		.then(response => {
 			if (!response.ok) {
 				throw Error("Error!");
@@ -7,16 +9,25 @@ fetchData = () => {
 			return response.json()
 		})
 		.then(personsData => {
-			console.log(personsData);
-			personsData.sort(function (a, b) {
-				if (a.age < b.age) {
-					return -1;
-				}
-			});
-			const outputInHtml = personsData.map(data => {
-				return `
+
+      // set data to storage
+      peopleData = personsData;
+
+      showContent();
+		})
+		.catch(error => {
+			console.log(error)
+		});
+};
+
+fetchData();
+
+
+let showContent = function() {
+  const outputInHtml = peopleData.map(data => {
+    return `
 				<div class="person-wrap">
-					<div class="person"><img src="${data.imgURL}"></div>
+					<div class="person"><img src="${'https://drive.google.com/thumbnail?id=' + data.imgId + '&sz=w218-h250'}"></div>
 					<div class="name-wrap">
 					    <div class="name">${data.name}</div>
 					    <div>${data.surname}</div>
@@ -26,16 +37,43 @@ fetchData = () => {
 					    <div>${data.monthOfBirth}</div>
 					</div>
 			    </div>`
-			})
-				.join("");
-			document.querySelector("#personslist").insertAdjacentHTML("afterbegin", outputInHtml);
-		})
-		.catch(error => {
-			console.log(error)
-		});
-};
+  })
+    .join("");
 
-fetchData();
+  document.querySelector("#personslist").innerHTML = outputInHtml;
+}
+
+let sortPeople = function (people, sortType) {
+  people.sort(function (firstElement, secondElement) {
+
+    if (firstElement[sortType] < secondElement[sortType]) {
+      return -1;
+    }
+    if (firstElement[sortType] > secondElement[sortType]) {
+      return 1;
+    }
+
+    // a must be equal to b
+    return 0;
+  })
+}
+
+const selectElement = document.querySelector('.sort-person');
+
+selectElement.addEventListener('change', (event) => {
+  let sortType = event.target.value;
+
+  sortPeople(peopleData, sortType);
+
+  setTimeout(function() {
+    showContent();
+  }, 0);
+
+
+  console.log(sortType);
+  console.log(peopleData.map((i) => i[sortType]));
+});
+
 
 (function ($) {
 	"use strict";
