@@ -1,4 +1,4 @@
-let peopleData = [];
+let personData = [];
 
 const apiURL = 'http://hg.kh.ua/api/family';
 fetchData = () => {
@@ -12,7 +12,7 @@ fetchData = () => {
 		.then(personsData => {
 
       // set data to storage
-      peopleData = personsData.items;
+      personData = personsData.items;
 
       showContent();
 		})
@@ -25,17 +25,15 @@ fetchData();
 
 
 let showContent = function() {
-  const outputInHtml = peopleData.map(data => {
+  const outputInHtml = personData.map(data => {
     return `
 				<div class="person-wrap">
-					<div class="person"><img src="${'https://drive.google.com/thumbnail?id=' + data.imgId + '&sz=w218-h250'}"></div>
+					<div class="person"><img src="${'https://drive.google.com/thumbnail?id=' + data.img_id + '&sz=w218-h250'}"></div>
 					<div class="name-wrap">
-					    <div class="name">${data.name}</div>
-					    <div>${data.surname}</div>
+					    <div class="name">${data.full_name}</div>
 					</div>
 					<div class="birth-wrap">
-					    <div class="birth">${data.numberOfBirth}</div>
-					    <div>${data.monthOfBirth}</div>
+					    <div class="birth">${data.birth_date_text}</div>
 					</div>
 			    </div>`
   })
@@ -64,7 +62,7 @@ const selectElement = document.querySelector('.sort-person');
 selectElement.addEventListener('change', (event) => {
   let sortType = event.target.value;
 
-  sortPeople(peopleData, sortType);
+  sortPeople(personData, sortType);
 
   setTimeout(function() {
     showContent();
@@ -72,7 +70,7 @@ selectElement.addEventListener('change', (event) => {
 
 
   console.log(sortType);
-  console.log(peopleData.map((i) => i[sortType]));
+  console.log(personData.map((i) => i[sortType]));
 });
 
 
