@@ -1,7 +1,8 @@
 let peopleData = [];
 
+const apiURL = 'http://hg.kh.ua/api/family';
 fetchData = () => {
-	fetch("./raw.json?v=" + (new Date().getMilliseconds()))
+	fetch(apiURL)
 		.then(response => {
 			if (!response.ok) {
 				throw Error("Error!");
@@ -11,7 +12,7 @@ fetchData = () => {
 		.then(personsData => {
 
       // set data to storage
-      peopleData = personsData;
+      peopleData = personsData.items;
 
       showContent();
 		})
