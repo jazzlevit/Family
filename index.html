@@ -119,18 +119,18 @@
 							</nav>
 
 							<div class="search-container ">
-								<form action="#" class="search-form" onclick="searchForm();return false;">
-									<input type="text" name="search-form-txt" class="search-text">
-									<input type="submit" value="" class="search-submit" name="submit">
+								<form action="#" class="search-form">
+									<input type="text" name="name" class="search-text">
+									<input type="submit" value="" class="search-submit" name="submit" onclick="searchForm();return false;">
 								</form>
                 <script>
                   function searchForm(){
                     var searchInput = jQuery('.search-form input[name="name"]').val();
-                    if(searchInput==''){
+                    if (searchInput == '') {
                       alert('Ошибка! Вы забыли ввести фразу для поиска.');
                       return false;
                     }
-                    location.href = '/articles/search'+'/'+searchInput;
+                    location.href = 'http://hg.kh.ua/articles/search/' + searchInput;
                   }
                 </script>
 
