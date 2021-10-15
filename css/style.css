@@ -246,8 +246,7 @@ ul.social-links li {
 	margin-left: 15px;
 }
 .header-container {
-	/* background-color: #414146; */
-	background-color: #7e8082;
+	background-color: #414146;
 }
 
 /* LOGO
@@ -416,6 +415,7 @@ ul.sf-menu li li li.sfHover ul {
 }
 
 .background-hg {
+	margin: auto;
 	background-image: url(../images/hg-img/Frame2.png);
 	background-position: center;
 	max-width: 940px;
@@ -590,6 +590,10 @@ ul.sf-menu li li li.sfHover ul {
 
 .birth {
 	padding-right: 5px;
+}
+
+.footer-social {
+	text-transform: uppercase;
 }
 
 /* 3 BLOCKS (ver. 1) 
