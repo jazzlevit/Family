@@ -417,9 +417,11 @@ ul.sf-menu li li li.sfHover ul {
 .background-hg {
 	margin: auto;
 	background-image: url(../images/hg-img/Frame2.png);
-	background-position: center;
+	background-position: top;
 	max-width: 940px;
 	height: 758px;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .sort-wrapper {
@@ -5127,10 +5129,27 @@ a:hover {
 		grid-template-columns: 1fr;
 		justify-items: center;
 	}
+	.footer-menu {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
 }
 
 @media (max-width: 576px) {
 	.persons {
 		grid-template-columns: 1fr;
 	}
+	.header-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.logo {
+		margin-bottom: 30px;
+		margin-left: 10px;
+	}
+}
+
+@media (max-width: 480px) {
 }
