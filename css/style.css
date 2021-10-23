@@ -194,6 +194,7 @@ ul.social-links li {
 	float: right;
 }
 .search-text {
+	border-radius: 0px;
 	border: none !important;
 	color: #c1c1c1 !important;
 	display: block !important;
@@ -212,6 +213,7 @@ ul.social-links li {
 	font-family: "OswaldLight", Arial, Helvetica, sans-serif;
 }
 .search-submit {
+	border-radius: 0px;
 	margin: 0;
 	padding: 0;
 	width: 38px; /*32*/
