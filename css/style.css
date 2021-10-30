@@ -18,6 +18,10 @@ img {
 	display: block;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-size: 12px;
 	line-height: 18px;
@@ -418,12 +422,12 @@ ul.sf-menu li li li.sfHover ul {
 
 .background-hg {
 	margin: auto;
-	background-image: url(../images/hg-img/Frame2.png);
-	background-position: top;
 	max-width: 940px;
 	height: 758px;
-	background-size: contain;
+	background-position: center center;
 	background-repeat: no-repeat;
+	background-size: contain;
+	background-image: url(../images/hg-img/Frame-2.jpg);
 }
 
 .sort-wrapper {
