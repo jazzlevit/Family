@@ -589,10 +589,22 @@ ul.sf-menu li li li.sfHover ul {
 }
 
 .name {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	font-size: 28px;
+	line-height: 38px;
+	color: #000000;
 	padding-right: 5px;
 }
 
 .birth {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	font-size: 28px;
+	line-height: 38px;
+	color: #000000;
 	padding-right: 5px;
 }
 
@@ -5111,6 +5123,9 @@ a:hover {
 }
 
 @media (max-width: 992px) {
+	.background-hg {
+		height: 607px;
+	}
 	.persons {
 		grid-template-columns: 1fr 1fr;
 		justify-items: center;
@@ -5118,6 +5133,9 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+	.background-hg {
+		height: 237px;
+	}
 	.sort-wrapper {
 		grid-template-columns: 1fr;
 		grid-gap: 20px;
@@ -5139,6 +5157,9 @@ a:hover {
 }
 
 @media (max-width: 576px) {
+	.background-hg {
+		height: 237px;
+	}
 	.persons {
 		grid-template-columns: 1fr;
 	}
