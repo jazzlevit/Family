@@ -28,7 +28,7 @@ let showContent = function() {
   const outputInHtml = personData.map(data => {
     return `
 				<div class="person-wrap">
-					<div class="person"><img src="${'https://drive.google.com/thumbnail?id=' + data.img_id + '&sz=w218-h250'}"></div>
+					<div class="person"><img src="${'https://drive.google.com/thumbnail?id=' + data.img_id + '&sz=h650'}"></div>
 					<div class="name-wrap">
 					    <div class="name">${data.full_name}</div>
 					</div>
@@ -43,35 +43,34 @@ let showContent = function() {
 }
 
 let sortPeople = function (people, sortType) {
-  people.sort(function (firstElement, secondElement) {
-
-    if (firstElement[sortType] < secondElement[sortType]) {
-      return -1;
-    }
-    if (firstElement[sortType] > secondElement[sortType]) {
-      return 1;
-    }
-
-    // a must be equal to b
-    return 0;
-  })
+  // people.sort(function (firstElement, secondElement) {
+  //
+  //   if (firstElement[sortType] < secondElement[sortType]) {
+  //     return -1;
+  //   }
+  //   if (firstElement[sortType] > secondElement[sortType]) {
+  //     return 1;
+  //   }
+  //
+	// return 0;
+  // })
 }
 
-const selectElement = document.querySelector('.sort-person');
-
-selectElement.addEventListener('change', (event) => {
-  let sortType = event.target.value;
-
-  sortPeople(personData, sortType);
-
-  setTimeout(function() {
-    showContent();
-  }, 0);
-
-
-  console.log(sortType);
-  console.log(personData.map((i) => i[sortType]));
-});
+// const selectElement = document.querySelector('.sort-person');
+//
+// selectElement.addEventListener('change', (event) => {
+//   let sortType = event.target.value;
+//
+//   sortPeople(personData, sortType);
+//
+//   setTimeout(function() {
+//     showContent();
+//   }, 0);
+//
+//
+//   console.log(sortType);
+//   console.log(personData.map((i) => i[sortType]));
+// });
 
 
 (function ($) {
