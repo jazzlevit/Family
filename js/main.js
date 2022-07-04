@@ -1,6 +1,6 @@
 let personData = [];
 
-const apiURL = 'http://hg.kh.ua/api/family';
+const apiURL = 'https://hg.kh.ua/api/family';
 fetchData = () => {
 	fetch(apiURL)
 		.then(response => {
